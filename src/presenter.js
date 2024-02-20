@@ -8,8 +8,8 @@ form.addEventListener("submit", async (event) => {
   const nombreS = String(nombreHtml.value);
   const edadS = Number.parseInt(edadHtml.value);
   const Saludo = await obtenerSaludoPorEdad(nombreS,edadS);
-
-  div.innerHTML = "<p> Hola " + Saludo + "<b>" + nombreS+ "</b></p>";
+  let saludoHora = obtenerSaludoPorHora();
+  div.innerHTML = "<p>"+ saludoHora+ " " + Saludo + "<b>" + nombreS+ "</b></p>";
 
 
 });
@@ -33,5 +33,18 @@ async function obtenerSaludoPorEdad(nombre, edad) {
       }
   } catch (error) {
       console.error('Error al obtener información del género:', error);
+  }
+}
+
+
+function obtenerSaludoPorHora() {
+  const horaActual = new Date().getHours();
+
+  if (horaActual >= 5 && horaActual < 12) {
+      return 'Buenos días';
+  } else if (horaActual >= 12 && horaActual < 18) {
+      return 'Buenas tardes';
+  } else {
+      return 'Buenas noches';
   }
 }
