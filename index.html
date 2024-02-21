@@ -1,19 +1,24 @@
 <html>
 
   <body>
-    <h1>BOT SALUDADOR </h1>
+    <h1 id="Tituto">BOT SALUDADOR </h1>
 
+    <label id=textSeleccionarIdioma for="selectIdioma">Selecciona el idioma:</label>
+    <select id="selectIdioma" >
+        <option id=español value="es" selected>Español</option>
+        <option id=ingles value="en">Inglés</option>
+    </select>
 
 
     <form id="saludador-form">
       
-      <label for="nombre">Ingrese su nombre:</label>
+      <label id=textIngreseNombre for="nombre">Ingrese su nombre:</label>
       <input type="text" id="nombre" class="datos" />
       <br>
-      <label for="edad">Ingrese su edad:</label>
+      <label id=textIngreseEdad for="edad">Ingrese su edad:</label>
       <input type="number" id="edad" class="datos" />
       <br>
-      <input type="submit" value="Ingresar" id="abrir-chat" />
+      <input type="submit" value="Ingresar al chat" id="abrir-chat" />
 
       
     </form>
